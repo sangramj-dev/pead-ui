@@ -8,6 +8,9 @@ import { SignalDetailPage } from '@/pages/SignalDetailPage'
 import { EarningsPage } from '@/pages/EarningsPage'
 import { MarketPage } from '@/pages/MarketPage'
 import { WatchlistPage } from '@/pages/WatchlistPage'
+import { BacktestPage } from '@/pages/BacktestPage'
+import { PortfolioPage } from '@/pages/PortfolioPage'
+import { SettingsPage } from '@/pages/SettingsPage'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +34,9 @@ export default function App() {
             <Route path="market" element={<MarketPage />} />
             <Route path="market/:ticker" element={<MarketPage />} />
             <Route path="watchlist" element={<WatchlistPage />} />
+            <Route path="backtest" element={<BacktestPage />} />
+            <Route path="portfolio" element={<PortfolioPage />} />
+            <Route path="settings" element={<SettingsPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

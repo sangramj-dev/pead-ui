@@ -7,7 +7,9 @@ const NAV_ITEMS = [
   { to: '/', label: 'Dashboard' },
   { to: '/signals', label: 'Signals' },
   { to: '/earnings', label: 'Earnings' },
-  { to: '/watchlist', label: 'Watchlist' },
+  { to: '/backtest', label: 'Backtest' },
+  { to: '/portfolio', label: 'Portfolio' },
+  { to: '/settings', label: 'Settings' },
 ] as const
 
 export function Navbar() {

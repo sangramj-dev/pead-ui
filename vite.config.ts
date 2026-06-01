@@ -32,6 +32,16 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/signals/, '/api/v1/signals'),
       },
+      '/api/backtest': {
+        target: 'http://localhost:8088',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/backtest/, '/api/v1'),
+      },
+      '/api/portfolio': {
+        target: 'http://localhost:8086',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/portfolio/, '/api/v1/portfolio'),
+      },
     },
   },
   build: {
