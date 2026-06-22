@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { BacktestForm } from '@/components/backtest/BacktestForm'
 import { BacktestResults } from '@/components/backtest/BacktestResults'
 import { TradeTable } from '@/components/backtest/TradeTable'
@@ -8,7 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Loader2 } from 'lucide-react'
 
 export function BacktestPage() {
-  const [backtestId, setBacktestId] = useState<string | null>(null)
+  const [searchParams] = useSearchParams()
+  const [backtestId, setBacktestId] = useState<string | null>(searchParams.get('id'))
   const { data: summary } = useBacktest(backtestId)
   const { data: trades } = useBacktestTrades(
     summary?.status === 'COMPLETED' ? backtestId : null

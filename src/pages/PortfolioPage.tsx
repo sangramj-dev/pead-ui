@@ -46,7 +46,7 @@ export function PortfolioPage() {
             color={summary.unrealisedPnl >= 0 ? 'text-green-500' : 'text-red-500'}
           />
           <SummaryCard label="Open Positions" value={String(summary.openPositionsCount)} />
-          <SummaryCard label="Win Rate" value={`${summary.winRate.toFixed(1)}%`} />
+          <SummaryCard label="Win Rate" value={`${(summary.winRate * 100).toFixed(1)}%`} />
         </div>
       )}
 

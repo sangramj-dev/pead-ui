@@ -50,7 +50,7 @@ export function BacktestResults({ backtestId }: BacktestResultsProps) {
         />
         <StatCard
           label="Win Rate"
-          value={`${summary.winRate.toFixed(1)}%`}
+          value={`${(summary.winRate * 100).toFixed(1)}%`}
         />
         <StatCard
           label="Sharpe Ratio"
@@ -63,7 +63,7 @@ export function BacktestResults({ backtestId }: BacktestResultsProps) {
         />
         <StatCard
           label="CAGR"
-          value={`${summary.cagr.toFixed(1)}%`}
+          value={`${(summary.cagr * 100).toFixed(1)}%`}
           color={summary.cagr >= 0 ? 'text-green-500' : 'text-red-500'}
         />
         <StatCard
